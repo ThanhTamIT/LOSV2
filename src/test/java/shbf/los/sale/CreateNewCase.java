@@ -89,7 +89,7 @@ public class CreateNewCase extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Step 09: Input Loan Application Information File");
         createNewCaseHomePage.inputLoanAppInformationFile(fullFaceIMG, pOADocument, customerAndStaffPhoto, customerPhotoInsideHouse, customerPhotoFrontHouse, serviceBill);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Step 38: Click Continue Button");
+        ExtentTestManager.getTest().log(Status.INFO, "Step 10: Click Continue Button");
         saleHomePage = createNewCaseHomePage.clickContinueButton();
     }
 }
