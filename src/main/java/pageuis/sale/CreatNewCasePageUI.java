@@ -1,6 +1,14 @@
-package pageuis.los;
+package pageuis.sale;
 
-public class InformationSalePageUI {
+public class CreatNewCasePageUI {
+    // Customer ID Page UI
+    public static final String OPEN_CASES_FRAME = "//iframe[@name='openCaseFrame']";
+    public static final String COMPLETE_BTN_IN_CUSTOMER_ID = "//span[contains(text(),'Hoàn thành')]";
+    public static final String FRONT_IMG = "//div[@class='col-sm-12 panel-upload item-document-IdentityCardFront']//img";
+    public static final String BACK_IMG = "//div[@class='col-sm-12 panel-upload item-document-IdentityCardBack']//img";
+    public static final String FULL_FACE_IMG = "//div[@class='col-sm-12 panel-upload item-document-CustomerPhoto']//img";
+
+    // Information Sale Page UI
     public static final String ID_CARD_ISSUE_PARENT = "//div[@id='idCardIssuePlace']//select";
     public static final String MOBILE_PHONE_INPUT = "//input[@id='form[mobilePhone]']";
     public static final String MOBILE_OWNER_STATUS_CHECKBOX = "//input[@id='form[mobileOwnerStatus]' and @value='YES']";
@@ -18,14 +26,16 @@ public class InformationSalePageUI {
     public static final String LOAN_CONSUMER_INPUT = "//input[@id='form[loanConsumer]']";
     public static final String LOAN_TERM_INPUT = "//div[@id='loanTerm']//select";
     public static final String APPLICATION_DATE_INPUT = "//input[@id='form[applicationDate]']";
-    public static final String VALIDATE_BUTTON = "//button[@id='form[btnValidate]']";
+    public static final String VALIDATE_BTN = "//button[@id='form[btnValidate]']";
     public static final String SALE_DECISION_INPUT = "//div[@id='saleDecision']//select";
-    public static final String COMPLETE_BUTTON = "//button[@id='form[btnComplete]']";
+    public static final String COMPLETE_BTN = "//button[@id='form[btnComplete]']";
     public static final String POA_DOCUMENT = "//form[@id='POADocument']//p/a";
     public static final String CUSTOMER_AND_STAFF_PHOTO = "//form[@id='CustomerAndStaffPhoto']//p/a";
     public static final String CUSTOMER_PHOTO_INSIDE_HOUSE = "//form[@id='CustomerPhotoInsideHouse']//p/a";
     public static final String CUSTOMER_PHOTO_FRONT_HOUSE = "//form[@id='CustomerPhotoFrontHouse']//p/a";
     public static final String SERVER_BILL_IMG = "//form[@id='ServiceBill']//p/a";
-    public static final String SUBMIT_BUTTON = "//button[@id='form[submitBtn]']";
-    public static final String CONTINUE_BUTTON = "//input[@name='btnContinue_1']";
+    public static final String SUBMIT_BTN = "//button[@id='form[submitBtn]']";
+    public static final String CONTINUE_BTN = "//input[@name='btnContinue_1']";
+    public static final String MODAL_FADE = "//div[@class='modal fade pm-modal-global in']";
+    public static final String ID_CARD_NUMBER = "//input[@id='form[idCardNumber]']";
 }
