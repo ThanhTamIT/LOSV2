@@ -43,7 +43,7 @@ public class ReportNGListener implements ITestListener {
 		System.setProperty("org.uncommons.reportng.escape-output", "false");
 
 		Object testClass = result.getInstance();
-		WebDriver webDriver = ((BaseTest) testClass).getWebDriver();
+		WebDriver webDriver = ((BaseTest) testClass).getDriverInstance();
 
 		String screenshotPath = captureScreenshotBase64(webDriver, result.getName());
 		Reporter.getCurrentTestResult();

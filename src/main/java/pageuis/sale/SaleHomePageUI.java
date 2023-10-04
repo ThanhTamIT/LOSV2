@@ -1,4 +1,4 @@
-package pageuis.los;
+package pageuis.sale;
 
 public class SaleHomePageUI {
 	public static final String ACCOUNT_SALE = "//label[@class='textBlue']";

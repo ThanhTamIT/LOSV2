@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="LMS">
-<parameter name="url" value="http://dev-dsa.shbfinance.com.vn/sysshbf/en/neoclassic/login/login" />
-
   <listeners>
     <listener class-name="commons.MethodListener" />
     <listener class-name="reportconfig.ReportNGListener" />
@@ -9,9 +7,10 @@
   </listeners>
 
   <test name="Run ON CHROME">
-  <parameter name="brower" value="chrome" />
+  <parameter name="browser" value="chrome" />
     <classes>
-       <class name="com.los.newcase.CreateNewCase"/>
+<!--       <class name="shbf.los.sale.SaleLogin"/>-->
+      <class name="shbf.los.sale.CreateNewCase"/>
     </classes>
   </test> 
 </suite> 
