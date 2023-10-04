@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="LMS">
+  <listeners>
+    <listener class-name="commons.MethodListener" />
+    <listener class-name="reportconfig.ReportNGListener" />
+    <listener class-name="reportconfig.ExtentTestListener" />
+  </listeners>
+
+  <test name="Run ON CHROME">
+  <parameter name="browser" value="chrome" />
+    <classes>
+<!--       <class name="shbf.los.sale.SaleLogin"/>-->
+      <class name="shbf.los.sale.CreateNewCase"/>
+    </classes>
+  </test> 
+</suite> 
