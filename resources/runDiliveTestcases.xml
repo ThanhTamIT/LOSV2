@@ -11,7 +11,7 @@
   <test name="Run ON CHROME">
   <parameter name="brower" value="chrome" />
     <classes>
-       <class name="com.los.newcase.CreateNewCase"/>            
+       <class name="com.los.newcase.CreateNewCase"/>
     </classes>
   </test> 
 </suite> 
