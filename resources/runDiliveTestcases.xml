@@ -11,6 +11,8 @@
     <classes>
 <!--       <class name="shbf.los.sale.SaleLogin"/>-->
       <class name="shbf.los.sale.CreateNewCase"/>
+<!--      <class name="shbf.los.salelead.SaleLeadLogin"/>-->
+      <class name="shbf.los.salelead.UpdateInformationToSale"/>
     </classes>
   </test> 
 </suite> 

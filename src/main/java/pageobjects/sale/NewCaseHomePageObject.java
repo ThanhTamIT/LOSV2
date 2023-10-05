@@ -11,14 +11,14 @@ public class NewCaseHomePageObject extends BasePage {
     }
 
     public void clickToCustomerBasePricing() {
-        waitForAllElementVisible(SaleHomePageUI.CASES_SUB_FRAME);
-        switchToFrameIframe(SaleHomePageUI.CASES_SUB_FRAME);
+        waitForAllElementVisible(BasePageUI.CASES_SUB_FRAME);
+        switchToFrameIframe(BasePageUI.CASES_SUB_FRAME);
         doubleClick(SaleHomePageUI.CUSTOMER_BASE_PRICING);
     }
 
     public void inputIDCard(String frontIDCartIMG, String frontIDCartText, String backIDCartIMG, String backIDCartText, String fullFaceIMG, String fullFaceText) {
-        waitForAllElementVisible(CreatNewCasePageUI.OPEN_CASES_FRAME);
-        switchToFrameIframe(CreatNewCasePageUI.OPEN_CASES_FRAME);
+        waitForAllElementVisible(BasePageUI.OPEN_CASES_FRAME);
+        switchToFrameIframe(BasePageUI.OPEN_CASES_FRAME);
         uploadImage(BasePageUI.DYNAMIC_INPUT_IMG, frontIDCartIMG, frontIDCartText);
         uploadImage(BasePageUI.DYNAMIC_INPUT_IMG, backIDCartIMG, backIDCartText);
         uploadImage(BasePageUI.DYNAMIC_INPUT_IMG, fullFaceIMG, fullFaceText);
@@ -31,8 +31,10 @@ public class NewCaseHomePageObject extends BasePage {
         clickToElement(CreatNewCasePageUI.COMPLETE_BTN_IN_CUSTOMER_ID);
     }
 
-    public void inputRequesterInformation(String iDCardIssue, String mobilePhone, String temporaryAddressProvince, String temporaryAddressDistrict) {
+    public void inputRequesterInformation(String idCard, String iDCardIssue, String mobilePhone, String temporaryAddressProvince, String temporaryAddressDistrict) {
         waitForPMModalLoadingInvisible();
+        sleepInSecond(5);
+        sendKeyToElement(CreatNewCasePageUI.ID_CARD_NUMBER, idCard);
         scrollToElement(CreatNewCasePageUI.ID_CARD_ISSUE_PARENT);
         selectItemInDefaultDropdown(CreatNewCasePageUI.ID_CARD_ISSUE_PARENT, iDCardIssue);
         waitForPMModalLoadingInvisible();
@@ -89,14 +91,14 @@ public class NewCaseHomePageObject extends BasePage {
         selectItemInDefaultDropdown(CreatNewCasePageUI.LOAN_TERM_INPUT, loanTerm);
         scrollToElement(CreatNewCasePageUI.APPLICATION_DATE_INPUT);
         sendKeyToElement(CreatNewCasePageUI.APPLICATION_DATE_INPUT, applicationDate);
-        scrollToElement(CreatNewCasePageUI.VALIDATE_BTN);
-        clickToElement(CreatNewCasePageUI.VALIDATE_BTN);
+        scrollToElement(BasePageUI.BTN_VALIDATE);
+        clickToElement(BasePageUI.BTN_VALIDATE);
         waitForPMModalLoadingInvisible();
         scrollToElement(CreatNewCasePageUI.SALE_DECISION_INPUT);
         selectItemInDefaultDropdown(CreatNewCasePageUI.SALE_DECISION_INPUT, saleDecision);
         waitForElementInvisible(CreatNewCasePageUI.MODAL_FADE);
         scrollToBottomPage();
-        clickToElement(CreatNewCasePageUI.COMPLETE_BTN);
+        clickToElement(BasePageUI.BTN_COMPLETE);
     }
 
     public void inputLoanAppInformationFile(String fullFaceIMG, String pOADocument, String customerAndStaffPhoto, String customerPhotoInsideHouse,
@@ -116,8 +118,13 @@ public class NewCaseHomePageObject extends BasePage {
     }
 
     public SaleHomePageObject clickContinueButton() {
-        waitForElementVisible(CreatNewCasePageUI.CONTINUE_BTN);
-        clickToElement(CreatNewCasePageUI.CONTINUE_BTN);
+        waitForElementVisible(BasePageUI.BTN_CONTINUE);
+        clickToElement(BasePageUI.BTN_CONTINUE);
         return new SaleHomePageObject();
+    }
+
+    public String getTextAppCode() {
+        waitForElementVisible(CreatNewCasePageUI.TXT_APP_CODE);
+        return getElementAttribute(CreatNewCasePageUI.TXT_APP_CODE, "value");
     }
 }

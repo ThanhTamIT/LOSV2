@@ -1,4 +1,4 @@
-package pageobjects.sale;
+package pageobjects.salelead;
 
 import commons.BasePage;
 import driver.DriverManager;
@@ -6,9 +6,9 @@ import pageuis.LoginPageUI;
 
 import static commons.GlobalConstants.URL_SALE;
 
-public class SaleLoginPageObject extends BasePage {
+public class SaleLeadLoginPageObject extends BasePage {
 
-    public SaleLoginPageObject(String loginUrl) {
+    public SaleLeadLoginPageObject(String loginUrl) {
         openPageUrl(loginUrl);
     }
 
@@ -36,11 +36,11 @@ public class SaleLoginPageObject extends BasePage {
         return isElementDisplayed(LoginPageUI.TEMPORAL_MESSAGE_WARNING);
     }
 
-    public SaleHomePageObject goToLoginSuccess(String account, String password) {
+    public SaleLeadHomePageObject goToLogin(String account, String password) {
         waitForElementVisible(LoginPageUI.ACCOUNT_TEXTBOX);
         sendKeyToElement(LoginPageUI.ACCOUNT_TEXTBOX, account);
         sendKeyToElement(LoginPageUI.PASSWORD_TEXTBOX, password);
         clickToElement(LoginPageUI.LOGIN_BTN);
-        return new SaleHomePageObject();
+        return new SaleLeadHomePageObject();
     }
 }
