@@ -1,6 +1,7 @@
 package pageobjects.sale;
 
 import commons.BasePage;
+import commons.BasePageUI;
 import pageuis.sale.SaleHomePageUI;
 
 public class SaleHomePageObject extends BasePage {
@@ -9,13 +10,13 @@ public class SaleHomePageObject extends BasePage {
     }
 
     public String getTextAccount() {
-        waitForElementVisible(SaleHomePageUI.ACCOUNT_SALE);
-        return getElementText(SaleHomePageUI.ACCOUNT_SALE);
+        waitForElementVisible(SaleHomePageUI.TXT_ACCOUNT);
+        return getElementText(SaleHomePageUI.TXT_ACCOUNT);
     }
 
     public NewCaseHomePageObject clickToIconCasesStartCase() {
-        waitForAllElementVisible(SaleHomePageUI.CASES_FRAME);
-        switchToFrameIframe(SaleHomePageUI.CASES_FRAME);
+        waitForAllElementVisible(BasePageUI.CASES_FRAME);
+        switchToFrameIframe(BasePageUI.CASES_FRAME);
         clickToElement(SaleHomePageUI.ICON_CASES_START_CASE);
         return new NewCaseHomePageObject();
     }

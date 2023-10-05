@@ -5,6 +5,7 @@ import pageobjects.sale.SaleHomePageObject;
 
 import static commons.BasePageUI.CONTAINER_LOADING;
 import static commons.BasePageUI.PM_MODAL_LOADING;
+import static java.nio.file.Files.getAttribute;
 import static org.apache.commons.lang3.RandomStringUtils.randomNumeric;
 import static org.testng.Assert.assertFalse;
 
@@ -119,6 +120,11 @@ public class BasePage {
 	}
 	
 	public void doubleClick(String locator, String...dynamicValues ) {
+		Actions actions = new Actions(DriverManager.getDriver());
+		actions.doubleClick(this.getWebElement(getDynamicXpath(locator, dynamicValues))).perform();
+	}
+
+	public void doubleClick(String locator, String... dynamicValues) {
 		Actions actions = new Actions(DriverManager.getDriver());
 		actions.doubleClick(this.getWebElement(getDynamicXpath(locator, dynamicValues))).perform();
 	}
