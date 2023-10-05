@@ -35,7 +35,7 @@ public class BaseTest {
 		DriverManager.setDriver(driver);
 	}
 
-	//    @AfterClass
+	    @AfterClass
 	public static void closeDriver() {
 		try {
 			Thread.sleep(2000);
