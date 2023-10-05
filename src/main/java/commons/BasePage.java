@@ -124,11 +124,6 @@ public class BasePage {
 		actions.doubleClick(this.getWebElement(getDynamicXpath(locator, dynamicValues))).perform();
 	}
 
-	public void doubleClick(String locator, String... dynamicValues) {
-		Actions actions = new Actions(DriverManager.getDriver());
-		actions.doubleClick(this.getWebElement(getDynamicXpath(locator, dynamicValues))).perform();
-	}
-
 	public void uploadImage(String locator, String imagePath) {
 		WebElement element = this.getWebElement(locator);
 		element.sendKeys(imagePath);
