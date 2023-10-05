@@ -1,6 +1,7 @@
 package commons;
 
 import driver.DriverManager;
+import pageobjects.sale.SaleHomePageObject;
 
 import static commons.BasePageUI.CONTAINER_LOADING;
 import static commons.BasePageUI.PM_MODAL_LOADING;
@@ -116,6 +117,11 @@ public class BasePage {
 	public void doubleClick(String locator) {
 		Actions actions = new Actions(DriverManager.getDriver());
 		actions.doubleClick(this.getWebElement(locator)).perform();
+	}
+	
+	public void doubleClick(String locator, String...dynamicValues ) {
+		Actions actions = new Actions(DriverManager.getDriver());
+		actions.doubleClick(this.getWebElement(getDynamicXpath(locator, dynamicValues))).perform();
 	}
 
 	public void doubleClick(String locator, String... dynamicValues) {
@@ -308,6 +314,20 @@ public class BasePage {
 		WebElement element = this.getWebElement(getDynamicXpath(locator, params));
 		clearElementText(locator, params);
 		element.sendKeys(value);
+	}
+	
+	public void clickElementIfDisplay(String locator) {
+		try {
+			overrideGlobalTimeout(shortTimeout);
+
+			if (this.getWebElement(locator).isDisplayed()) {
+				overrideGlobalTimeout(longTimeout);
+
+				clickToElement(locator);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public int getElementSize(String locator) {
@@ -686,6 +706,15 @@ public class BasePage {
 	public void waitForElementInvisibleLongTime1(String locator) {
 		explicitWait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(longTimeout));
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
+	}
+	
+	public SaleHomePageObject loginToSystem(String userName, String password) {
+		waitForElementVisible(BasePageUI.EDT_USER_LOGIN);
+		sendKeyToElement(BasePageUI.EDT_USER_LOGIN, userName);
+		waitForElementVisible(BasePageUI.EDT_PASSWORD_LOGIN);
+		sendKeyToElement(BasePageUI.EDT_PASSWORD_LOGIN, password);
+		clickToElement(BasePageUI.BTN_LOGIN);
+		return new SaleHomePageObject();
 	}
 
 	public void connect(String... database) {
