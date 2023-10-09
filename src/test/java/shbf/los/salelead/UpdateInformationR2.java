@@ -6,19 +6,20 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageobjects.salelead.SaleLeadHomePageObject;
 import pageobjects.salelead.SaleLeadLoginPageObject;
-import pageobjects.salelead.UpdateInformationToSalePageObject;
+import pageobjects.salelead.UpdateInformationR2PageObject;
 import reportconfig.ExtentTestManager;
 
 import java.lang.reflect.Method;
 
-import static commons.GlobalConstants.*;
+import static commons.GlobalConstants.APP_CODE;
+import static commons.GlobalConstants.URL_SALE;
 
-public class UpdateInformationToSale extends BaseTest {
-    private String account, password, slDecision;
+public class UpdateInformationR2 extends BaseTest {
+    private String account, password, approve;
     private String browserName;
     private SaleLeadLoginPageObject saleLeadLoginPage;
     private SaleLeadHomePageObject saleLeadHomePage;
-    private UpdateInformationToSalePageObject updateInformationToSalePage;
+    private UpdateInformationR2PageObject updateInformationR2Page;
 
     @BeforeClass
     public void beforeClass() {
@@ -26,7 +27,7 @@ public class UpdateInformationToSale extends BaseTest {
         saleLeadLoginPage = new SaleLeadLoginPageObject(URL_SALE);
         account = "sale.lead1";
         password = "It123456";
-        slDecision = "Đồng ý";
+        approve = "Đồng ý ký hợp đồng";
     }
 
     @Test
@@ -36,12 +37,12 @@ public class UpdateInformationToSale extends BaseTest {
         saleLeadHomePage = saleLeadLoginPage.goToLogin(account, password);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step 02: Go To Update Information Page");
-        updateInformationToSalePage = saleLeadHomePage.goToUpdateInfoPage(APP_CODE);
+        updateInformationR2Page = saleLeadHomePage.goToUpdateInfoR2Page(APP_CODE);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Step 03: Check Rule And G oTo Confirm Page");
-        updateInformationToSalePage.checkRuleAndGoToConfirmPage(slDecision);
+        ExtentTestManager.getTest().log(Status.INFO, "Step 03: Input Decision Upload Contract");
+        updateInformationR2Page.inputDecisionUploadContract(approve);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step 04: Click Continue Button");
-        saleLeadHomePage = updateInformationToSalePage.clickContinueButton();
+        saleLeadHomePage = updateInformationR2Page.clickContinueButton();
     }
 }
