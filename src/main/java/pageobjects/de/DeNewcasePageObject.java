@@ -3,7 +3,6 @@ package pageobjects.de;
 import commons.BasePage;
 import commons.BasePageUI;
 import pageuis.de.DEPageUI;
-import pageuis.sale.SaleHomePageUI;
 
 public class DeNewcasePageObject extends BasePage{
 
@@ -21,15 +20,15 @@ public class DeNewcasePageObject extends BasePage{
 	}
 
 	public void inputFormInfoAboutTheLoanApplicant(String placeIssuancePoa, String datePoaIssue) {
-	//	sleepInSecond(10);
-      //  waitForElementVisible(DEPageUI.DRD_PARENRT_PLACE_ISSUANCE_POA);
-		waitForElementVisible(BasePageUI.CASES_OPEN_FRAME);
+		sleepInSecond(5);
+		waitForElementVisible(BasePageUI.CASES_FRAME);
+		switchToFrameIframe(BasePageUI.CASES_FRAME);
+		switchToFrameIframe(BasePageUI.CASES_SUB_FRAME);
 		switchToFrameIframe(BasePageUI.CASES_OPEN_FRAME);
-
-        scrollToElement(DEPageUI.DRD_PARENRT_PLACE_ISSUANCE_POA);
+		scrollToElement(DEPageUI.DRD_PARENRT_PLACE_ISSUANCE_POA);
+        waitForElementVisible(DEPageUI.DRD_PARENRT_PLACE_ISSUANCE_POA);
         selectItemInCustomDropdown(DEPageUI.DRD_PARENRT_PLACE_ISSUANCE_POA,DEPageUI.DRD_ITEM_CHILD_ISSUE_PLACE,placeIssuancePoa);
 		sendKeyToElement(DEPageUI.EDT_POA_ISSUE_DATE, datePoaIssue);
-		
 	}
 
 	public void inputFormInfoLivingAddress(String addressWard, String addressDetail) {
@@ -86,7 +85,6 @@ public class DeNewcasePageObject extends BasePage{
 		
 		sendKeyToElement(DEPageUI.EDT_EXPERIENCE_IN_MONTH,experienceBaseonMonth );
 		waitForElementVisible(DEPageUI.EDT_EXPERIENCE_IN_MONTH);
-
 	}
 
 	public void inputPositionAndLabourContractType(String position, String labourContractType) {
@@ -110,8 +108,6 @@ public class DeNewcasePageObject extends BasePage{
 		selectItemInDefaultDropdown(DEPageUI.DRD_REF2_RALATIONSHIP, refTypeSencond);
 		waitForElementVisible(DEPageUI.EDT_REF2_MOBILE_PHONE);
 		sendKeyToElement(DEPageUI.EDT_REF2_MOBILE_PHONE, phoneNumberRef2);
-
-		
 	}
 
 	public void inputMainFinancialCapacity(String cutomerIncome, String customerExpense, String customerNumberDepen, String salaryPamentType) {
@@ -123,11 +119,5 @@ public class DeNewcasePageObject extends BasePage{
 		sendKeyToElement(DEPageUI.EDT_CUSTOMER_NUMBER_OF_DEPENDANTS, customerNumberDepen);
 		waitForElementVisible(DEPageUI.DRD_SALARY_PAYMENT_TYPE);
 		selectItemInDefaultDropdown(DEPageUI.DRD_SALARY_PAYMENT_TYPE, salaryPamentType);
-
-		
 	}
-	
-	 
-
-
 }
