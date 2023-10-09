@@ -32,6 +32,11 @@ public class UpdateInformationToCAPageObject extends BasePage {
     public void updateDataInfo(String vhAccommodationTypeText, String vhHomeTypeText, String livingTimeInYear,
                                String livingTimeInMonth, String videoCallLocateIMG, String extraMiningVoucherIMG,
                                String apCreditHistory, String apDecision) {
+        /*Todo*/
+//        waitForElementVisible(BasePageUI.CASES_FRAME);
+//        switchToFrameIframe(BasePageUI.CASES_FRAME);
+//        switchToFrameIframe(BasePageUI.CASES_SUB_FRAME);
+//        switchToFrameIframe(BasePageUI.CASES_OPEN_FRAME);
         scrollToElement(UpdateInformationToCAPageUI.CBX_VIDEO_CALL_CODE);
         clickToElement(UpdateInformationToCAPageUI.CBX_VIDEO_CALL_CODE);
         scrollToElement(UpdateInformationToCAPageUI.INPUT_VH_ACCOMMODATION_TYPE);
