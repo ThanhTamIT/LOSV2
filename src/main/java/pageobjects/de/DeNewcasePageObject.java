@@ -21,12 +21,13 @@ public class DeNewcasePageObject extends BasePage{
 	}
 
 	public void inputFormInfoAboutTheLoanApplicant(String placeIssuancePoa, String datePoaIssue) {
-	//	sleepInSecond(10);
-      //  waitForElementVisible(DEPageUI.DRD_PARENRT_PLACE_ISSUANCE_POA);
-//		waitForElementVisible(BasePageUI.CASES_OPEN_FRAME);
-//		switchToFrameIframe(BasePageUI.CASES_OPEN_FRAME);
-
-        scrollToElement(DEPageUI.DRD_PARENRT_PLACE_ISSUANCE_POA);
+		sleepInSecond(5);
+		waitForElementVisible(BasePageUI.CASES_FRAME);
+		switchToFrameIframe(BasePageUI.CASES_FRAME);
+		switchToFrameIframe(BasePageUI.CASES_SUB_FRAME);
+		switchToFrameIframe(BasePageUI.CASES_OPEN_FRAME);
+		scrollToElement(DEPageUI.DRD_PARENRT_PLACE_ISSUANCE_POA);
+        waitForElementVisible(DEPageUI.DRD_PARENRT_PLACE_ISSUANCE_POA);
         selectItemInCustomDropdown(DEPageUI.DRD_PARENRT_PLACE_ISSUANCE_POA,DEPageUI.DRD_ITEM_CHILD_ISSUE_PLACE,placeIssuancePoa);
 		sendKeyToElement(DEPageUI.EDT_POA_ISSUE_DATE, datePoaIssue);
 		
