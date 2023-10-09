@@ -3,6 +3,7 @@ package pageuis.de;
 public class DEPageUI {
 	public static final String BTN_CHECK_CUS = "//button[@id='form[btnCheckCustomer]']";
 	public static final String DRD_PARENRT_PLACE_ISSUANCE_POA = "//span[@id='select2-formpoaIssuePlace-container']";
+
 	public static final String DRD_ITEM_CHILD_ISSUE_PLACE = "//ul[@id='select2-formpoaIssuePlace-results']/li";
 	public static final String EDT_POA_ISSUE_DATE = "//input[@id='form[poaIssueDate]']";
 	public static final String DRD_PARENT_ADDRESS_WARD = "//span[contains(@id,'formtemporaryAddressWard')]";
