@@ -16,5 +16,4 @@ public class BasePageUI {
     public static final String INPUT_SELECT_DECISION = "//select[@id='form[slDecision]']";
     public static final String BTN_COMPLETE = "//button[@id='form[btnComplete]']";
     public static final String BTN_CONTINUE = "//input[@name='btnContinue_1']";
-    public static final String ROW_DATA_APP_CODE = "//div[contains(text(),'%s')]";
 }

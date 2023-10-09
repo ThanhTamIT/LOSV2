@@ -19,8 +19,8 @@ public class SaleLeadHomePageObject extends BasePage {
         switchToFrameIframe(BasePageUI.CASES_FRAME);
         switchToFrameIframe(BasePageUI.CASES_SUB_FRAME);
         /*Todo*/
-        doubleClick(BasePageUI.ROW_DATA_APP_CODE, appCode);
-//        doubleClick(SaleLeadHomePageUI.ROW_DATA_APP_CODE_TEST);
+//        doubleClick(BasePageUI.TXT_DYNAMIC_APP_CODE, appCode);
+        doubleClick(SaleLeadHomePageUI.ROW_DATA_APP_CODE_TEST);
         return new UpdateInformationToSalePageObject();
     }
 }

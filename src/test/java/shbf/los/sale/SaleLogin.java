@@ -9,6 +9,7 @@ import pageobjects.sale.SaleLoginPageObject;
 import reportconfig.ExtentTestManager;
 
 import java.lang.reflect.Method;
+
 import static commons.GlobalConstants.URL_SALE;
 import static org.testng.Assert.assertTrue;
 
@@ -37,7 +38,7 @@ public class SaleLogin extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Input Empty Password Textbox");
         saleLoginPage.inputToPasswordTextbox("");
 
-        ExtentTestManager.getTest().log(Status.INFO, "Login - Step 04: Click Button Login");
+        ExtentTestManager.getTest().log(Status.INFO, "Login - Step 03: Click Button Login");
         saleLoginPage.clickToLoginButton();
 
         assertTrue(saleLoginPage.isTemporalMessageWarningDisplayed());
@@ -52,7 +53,7 @@ public class SaleLogin extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Input Invalid Password Textbox");
         saleLoginPage.inputToPasswordTextbox(passwordInvalid);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Login - Step 04: Click Button Login");
+        ExtentTestManager.getTest().log(Status.INFO, "Login - Step 03: Click Button Login");
         saleLoginPage.clickToLoginButton();
 
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 04: Check Popup Error Displayed");
@@ -62,7 +63,7 @@ public class SaleLogin extends BaseTest {
     @Test
     public void loginSuccess(Method method) {
         ExtentTestManager.startTest(method.getName(), "Login Success");
-        ExtentTestManager.getTest().log(Status.INFO, "Login Success");
+        ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01: Input Valid Account And Password");
         saleHomePage = saleLoginPage.goToLoginSuccess(account, password);
 
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Check Go To The Homepage");
