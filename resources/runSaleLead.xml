@@ -11,6 +11,7 @@
     <classes>
       <class name="shbf.los.salelead.SaleLeadLogin"/>
       <class name="shbf.los.salelead.UpdateInformationToSale"/>
+      <class name="shbf.los.salelead.UpdateInformationR2"/>
     </classes>
   </test> 
 </suite> 

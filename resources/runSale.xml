@@ -11,6 +11,7 @@
     <classes>
        <class name="shbf.los.sale.SaleLogin"/>
       <class name="shbf.los.sale.CreateNewCase"/>
+      <class name="shbf.los.sale.UpdateInformationToAP"/>
     </classes>
   </test> 
 </suite> 

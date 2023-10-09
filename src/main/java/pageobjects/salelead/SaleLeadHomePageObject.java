@@ -23,4 +23,14 @@ public class SaleLeadHomePageObject extends BasePage {
         doubleClick(SaleLeadHomePageUI.ROW_DATA_APP_CODE_TEST);
         return new UpdateInformationToSalePageObject();
     }
+
+    public UpdateInformationR2PageObject goToUpdateInfoR2Page(String appCode) {
+        waitForAllElementVisible(BasePageUI.CASES_FRAME);
+        switchToFrameIframe(BasePageUI.CASES_FRAME);
+        switchToFrameIframe(BasePageUI.CASES_SUB_FRAME);
+        /*Todo*/
+//        doubleClick(BasePageUI.TXT_DYNAMIC_APP_CODE, appCode);
+        doubleClick(SaleLeadHomePageUI.ROW_DATA_APP_CODE_TEST);
+        return new UpdateInformationR2PageObject();
+    }
 }

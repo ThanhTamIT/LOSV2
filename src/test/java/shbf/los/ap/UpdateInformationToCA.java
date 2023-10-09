@@ -58,8 +58,10 @@ public class UpdateInformationToCA extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Step 04: Go To Update Information Page");
         updateInformationToCAPage = apHomePage.clickToIconCasesSelfInboxCase();
         updateInformationToCAPage.goToUpdateInfoPageTest();
+        ExtentTestManager.getTest().log(Status.INFO, "Step 05: Update Information Page");
         updateInformationToCAPage.updateDataInfo(vhAccommodationTypeText, vhHomeTypeText, livingTimeInYear, livingTimeInMonth,
                 videoCallLocateIMG, extraMiningVoucherIMG, apCreditHistory, apDecision);
+        ExtentTestManager.getTest().log(Status.INFO, "Step 06: Go To AP Home Page");
         apHomePage = updateInformationToCAPage. clickContinueButton();
     }
 }
