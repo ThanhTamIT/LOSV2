@@ -15,7 +15,7 @@ import static org.testng.Assert.assertTrue;
 
 public class CreateNewCase extends BaseTest {
     private String account, password, frontIDCartIMG, frontIDCartText, backIDCartIMG,
-            backIDCartText, fullFaceIMG, fullFaceText, iDCardIssue, mobilePhone, temporaryAddressProvince,
+            backIDCartText, fullFaceIMG, fullFaceText, iDCardIssue, idCard, mobilePhone, temporaryAddressProvince,
             temporaryAddressDistrict, productCategory, schemeProduct, billType, billOwner, customerCodeBill,
             billAmount1, billAmount2, billAmount3, loanConsumer, loanTerm, applicationDate, saleDecision,
             pOADocument, customerAndStaffPhoto, customerPhotoInsideHouse, customerPhotoFrontHouse, serviceBill;
@@ -37,6 +37,7 @@ public class CreateNewCase extends BaseTest {
         fullFaceIMG = PROJECT_PATH + "\\uploadFiles\\Face.jpg";
         fullFaceText = "Ảnh khách hàng";
         iDCardIssue = "An Giang";
+        idCard = "0380970" + getRandomInt();
         mobilePhone = "09150" + getRandomInt();
         temporaryAddressProvince = "An Giang";
         temporaryAddressDistrict = "Huyện An Phú";
@@ -63,7 +64,7 @@ public class CreateNewCase extends BaseTest {
     public void createNewCaseSuccess(Method method) {
         ExtentTestManager.startTest(method.getName(), "Create New Case");
         ExtentTestManager.getTest().log(Status.INFO, "Step 01: Login Success");
-        saleHomePage = saleLoginPage.loginSuccess(account, password);
+        saleHomePage = saleLoginPage.goToLoginSuccess(account, password);
         ExtentTestManager.getTest().log(Status.INFO, "Step 02: Check Go To The Homepage");
         assertTrue(saleHomePage.getTextAccount().contains(account));
 
@@ -75,10 +76,11 @@ public class CreateNewCase extends BaseTest {
 
         ExtentTestManager.getTest().log(Status.INFO, "Step 05: Input ID Cart - Click Complete Button");
         createNewCaseHomePage.inputIDCard(frontIDCartIMG, frontIDCartText, backIDCartIMG, backIDCartText, fullFaceIMG, fullFaceText);
+        APP_CODE = createNewCaseHomePage.getTextAppCode();
         createNewCaseHomePage.clickCompleteButton();
 
         ExtentTestManager.getTest().log(Status.INFO, "Step 06: Input Requester Information");
-        createNewCaseHomePage.inputRequesterInformation(iDCardIssue, mobilePhone, temporaryAddressProvince, temporaryAddressDistrict);
+        createNewCaseHomePage.inputRequesterInformation(idCard, iDCardIssue, mobilePhone, temporaryAddressProvince, temporaryAddressDistrict);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step 07: Input Loan Application Information 01");
         createNewCaseHomePage.inputLoanAppInformation1(productCategory, schemeProduct, billType, billOwner, customerCodeBill, billAmount1, billAmount2, billAmount3);
@@ -89,7 +91,7 @@ public class CreateNewCase extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Step 09: Input Loan Application Information File");
         createNewCaseHomePage.inputLoanAppInformationFile(fullFaceIMG, pOADocument, customerAndStaffPhoto, customerPhotoInsideHouse, customerPhotoFrontHouse, serviceBill);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Step 38: Click Continue Button");
+        ExtentTestManager.getTest().log(Status.INFO, "Step 10: Click Continue Button");
         saleHomePage = createNewCaseHomePage.clickContinueButton();
     }
 }

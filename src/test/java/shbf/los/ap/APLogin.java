@@ -1,31 +1,31 @@
-package shbf.los.sale;
+package shbf.los.ap;
 
 import com.aventstack.extentreports.Status;
 import commons.BaseTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pageobjects.sale.SaleHomePageObject;
-import pageobjects.sale.SaleLoginPageObject;
+import pageobjects.ap.APHomePageObject;
+import pageobjects.ap.APLoginPageObject;
 import reportconfig.ExtentTestManager;
 
 import java.lang.reflect.Method;
 
-import static commons.GlobalConstants.URL_SALE;
+import static commons.GlobalConstants.*;
 import static org.testng.Assert.assertTrue;
 
-public class SaleLogin extends BaseTest {
+public class APLogin extends BaseTest {
     private String account, accountInvalid, password, passwordInvalid;
     private String browserName;
-    private SaleLoginPageObject saleLoginPage;
-    private SaleHomePageObject saleHomePage;
+    private APLoginPageObject apLoginPage;
+    private APHomePageObject apHomePage;
 
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        saleLoginPage = new SaleLoginPageObject(URL_SALE);
-        account = "sale1";
+        apLoginPage = new APLoginPageObject(URL_LOS_MASTER);
+        account = "aplv1";
         accountInvalid = "a";
-        password = "It123456";
+        password = "123456";
         passwordInvalid = "a";
     }
 
@@ -33,40 +33,40 @@ public class SaleLogin extends BaseTest {
     public void loginEmptyData(Method method) {
         ExtentTestManager.startTest(method.getName(), "Input Empty Data");
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01: Input Empty Account Textbox");
-        saleLoginPage.inputToAccountTextbox("");
+        apLoginPage.inputToAccountTextbox("");
 
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Input Empty Password Textbox");
-        saleLoginPage.inputToPasswordTextbox("");
+        apLoginPage.inputToPasswordTextbox("");
 
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 03: Click Button Login");
-        saleLoginPage.clickToLoginButton();
+        apLoginPage.clickToLoginButton();
 
-        assertTrue(saleLoginPage.isTemporalMessageWarningDisplayed());
+        assertTrue(apLoginPage.isTemporalMessageWarningDisplayed());
     }
 
     @Test
     public void loginInvalidData(Method method) {
         ExtentTestManager.startTest(method.getName(), "Input Invalid Data");
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01: Input Invalid Account Textbox");
-        saleLoginPage.inputToAccountTextbox(accountInvalid);
+        apLoginPage.inputToAccountTextbox(accountInvalid);
 
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Input Invalid Password Textbox");
-        saleLoginPage.inputToPasswordTextbox(passwordInvalid);
+        apLoginPage.inputToPasswordTextbox(passwordInvalid);
 
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 03: Click Button Login");
-        saleLoginPage.clickToLoginButton();
+        apLoginPage.clickToLoginButton();
 
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 04: Check Popup Error Displayed");
-        assertTrue(saleLoginPage.isTemporalMessageWarningDisplayed());
+        assertTrue(apLoginPage.isTemporalMessageWarningDisplayed());
     }
 
     @Test
     public void loginSuccess(Method method) {
         ExtentTestManager.startTest(method.getName(), "Login Success");
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01: Input Valid Account And Password");
-        saleHomePage = saleLoginPage.goToLoginSuccess(account, password);
+        apHomePage = apLoginPage.goToLoginSuccess(account, password);
 
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Check Go To The Homepage");
-        assertTrue(saleHomePage.getTextAccount().contains(account));
+        assertTrue(apHomePage.getTextAccount().contains(account));
     }
 }

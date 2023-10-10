@@ -1,6 +1,6 @@
-package pageuis.sale;
+package pageuis;
 
-public class SaleLoginPageUI {
+public class LoginPageUI {
 	public static final String LOGIN_BTN = "//input[@id='form[BSUBMIT]']";
 	public static final String ACCOUNT_TEXTBOX = "//input[@id='form[USR_USERNAME]']";
 	public static final String PASSWORD_TEXTBOX = "//input[@id='form[USR_PASSWORD_MASK]']";

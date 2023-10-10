@@ -1,4 +1,4 @@
-package pageobjects.sale;
+package pageobjects.ap;
 
 import commons.BasePage;
 import driver.DriverManager;
@@ -6,13 +6,13 @@ import pageuis.LoginPageUI;
 
 import static commons.GlobalConstants.URL_SALE;
 
-public class SaleLoginPageObject extends BasePage {
+public class APLoginPageObject extends BasePage {
 
-    public SaleLoginPageObject(String loginUrl) {
+    public APLoginPageObject(String loginUrl) {
         openPageUrl(loginUrl);
     }
 
-    public void openLoginSale() {
+    public void openLoginAP() {
         DriverManager.getDriver().get(URL_SALE);
     }
 
@@ -36,11 +36,11 @@ public class SaleLoginPageObject extends BasePage {
         return isElementDisplayed(LoginPageUI.TEMPORAL_MESSAGE_WARNING);
     }
 
-    public SaleHomePageObject goToLoginSuccess(String account, String password) {
+    public APHomePageObject goToLoginSuccess(String account, String password) {
         waitForElementVisible(LoginPageUI.ACCOUNT_TEXTBOX);
         sendKeyToElement(LoginPageUI.ACCOUNT_TEXTBOX, account);
         sendKeyToElement(LoginPageUI.PASSWORD_TEXTBOX, password);
         clickToElement(LoginPageUI.LOGIN_BTN);
-        return new SaleHomePageObject();
+        return new APHomePageObject();
     }
 }
