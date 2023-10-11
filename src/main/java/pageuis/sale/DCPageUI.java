@@ -38,6 +38,10 @@ package pageuis.sale;
 		public static final String BTN_OK = "//button[text()='OK']";
 		public static final String MENU_ITEM_INBOX = "//span[text()='Inbox (']";
 		public static final String TEST_DATA = "//div[text()='DSB0F452308310020753']";
+		public static final String ROW_DATA = "//div[text()='%s']";
 		public static final String BTN_CONTINUE_DC = "//input[@id='btnContinue']";
+		public static final String INPUT_IMG_DC = "//input[@type='file']";
+		public static final String INPUT_IMG_DC_NAME = "//form[@id='S37ResultPhoto']//a";
+		public static final String RDO_DUPLICATE_RESULT = "//span[text()='Không trùng lặp']//preceding-sibling::input";
 	}
 

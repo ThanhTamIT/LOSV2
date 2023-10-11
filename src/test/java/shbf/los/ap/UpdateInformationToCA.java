@@ -46,18 +46,17 @@ public class UpdateInformationToCA extends BaseTest {
 
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 02: Check Go To The Homepage");
         assertTrue(apHomePage.getTextAccount().contains(account));
-
-        /* Todo
         ExtentTestManager.getTest().log(Status.INFO, "Step 03: Go To Unassigned Page");
         updateInformationToCAPage = apHomePage.clickToIconCasesSelfServiceCase();
 
         ExtentTestManager.getTest().log(Status.INFO, "Step 04: Go To Update Information Page");
         updateInformationToCAPage.goToUpdateInfoPage(APP_CODE);
-         */
-
-        ExtentTestManager.getTest().log(Status.INFO, "Step 04: Go To Update Information Page");
-        updateInformationToCAPage = apHomePage.clickToIconCasesSelfInboxCase();
-        updateInformationToCAPage.goToUpdateInfoPageTest();
+        /*Todo*/
+//        ExtentTestManager.getTest().log(Status.INFO, "Step 04: Go To Update Information Page");
+//        updateInformationToCAPage = apHomePage.clickToIconCasesSelfInboxCase();
+//        updateInformationToCAPage.goToUpdateInfoPageTest();
+//        updateInformationToCAPage.updateDataInfoTest(vhAccommodationTypeText, vhHomeTypeText, livingTimeInYear, livingTimeInMonth,
+//                videoCallLocateIMG, extraMiningVoucherIMG, apCreditHistory, apDecision);
         ExtentTestManager.getTest().log(Status.INFO, "Step 05: Update Information Page");
         updateInformationToCAPage.updateDataInfo(vhAccommodationTypeText, vhHomeTypeText, livingTimeInYear, livingTimeInMonth,
                 videoCallLocateIMG, extraMiningVoucherIMG, apCreditHistory, apDecision);

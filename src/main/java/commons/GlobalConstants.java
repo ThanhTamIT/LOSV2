@@ -6,6 +6,8 @@ public class GlobalConstants {
 	public static String APP_CODE = "";
 	public static final long LONG_TIMEOUT = 30;
 	public static final long SHOT_TIMEOUT = 5;
+
+	public static final long LONG_TIMEOUT_THREE_MINUTE = 180;
 	public static final long LONG_TIMEOUT1 = 120;
 	public static final String URL_SALE = "http://dev-dsa.shbfinance.com.vn/sysshbf/en/neoclassic/login/login";
 	public static final String URL_LOS_MASTER = "http://dev-los.shbfinance.com.vn/sysshbf/en/neoclassic/login/login";

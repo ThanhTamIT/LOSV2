@@ -37,7 +37,7 @@ public class UpdateInformationToSale extends BaseTest {
 
         ExtentTestManager.getTest().log(Status.INFO, "Step 02: Go To Update Information Page");
         updateInformationToSalePage = saleLeadHomePage.goToUpdateInfoPage(APP_CODE);
-
+        System.out.println("into_sale_lead: " + APP_CODE);
         ExtentTestManager.getTest().log(Status.INFO, "Step 03: Check Rule And G oTo Confirm Page");
         updateInformationToSalePage.checkRuleAndGoToConfirmPage(slDecision);
 

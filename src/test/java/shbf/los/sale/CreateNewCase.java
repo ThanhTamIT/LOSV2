@@ -78,7 +78,7 @@ public class CreateNewCase extends BaseTest {
         createNewCaseHomePage.inputIDCard(frontIDCartIMG, frontIDCartText, backIDCartIMG, backIDCartText, fullFaceIMG, fullFaceText);
         APP_CODE = createNewCaseHomePage.getTextAppCode();
         createNewCaseHomePage.clickCompleteButton();
-
+        System.out.println("sale" + APP_CODE);
         ExtentTestManager.getTest().log(Status.INFO, "Step 06: Input Requester Information");
         createNewCaseHomePage.inputRequesterInformation(idCard, iDCardIssue, mobilePhone, temporaryAddressProvince, temporaryAddressDistrict);
 

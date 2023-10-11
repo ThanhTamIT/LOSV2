@@ -1,4 +1,4 @@
-package pageui.cb;
+package pageuis.cb;
 
 public class CBPageUI {
 	
@@ -51,11 +51,16 @@ public class CBPageUI {
 	public static final String CHECKBOX_OTHER = "//input[@id='form[customerCIDebt][OTHER]']";
 	public static final String CHECKBOX_NO_DEBT = "//input[@id='form[customerCIDebt][NO_DEBT]']";
 	public static final String INPUT_PCB_RESULT_IMG1 = "//form[@id='CreditBureauOtherPCBResultPhoto']";
-	public static final String INPUT_PCB_RESULT_IMG1x = "//form[@id='CreditBureauOtherPCBResultPhoto']//input[@type='file']";
-	public static final String INPUT_PCB_RESULT_IMG2 = "//form[@id='CreditBureauPCBResultPhoto']//input[@type='file']";
-	public static final String INPUT_CIC_RESULT_IMG1 = "//form[@id='CreditBureauCICResultPhoto']//input[@type='file']";
-	public static final String INPUT_CIC_RESULT_IMG2 = "//form[@id='CreditBureauOtherCICResultPhoto']//input[@type='file']";
-	public static final String INPUT_FILE_S37_IMG = "//form[@id='CreditBureauFileS37']//input[@type='file']";
+	public static final String INPUT_PCB_RESULT_IMG1x = "//form[@id='CreditBureauOtherPCBResultPhoto']//input";
+	public static final String INPUT_PCB_RESULT_IMG2 = "//form[@id='CreditBureauPCBResultPhoto']//input";
+	public static final String INPUT_CIC_RESULT_IMG1 = "//form[@id='CreditBureauCICResultPhoto']//input";
+	public static final String INPUT_CIC_RESULT_IMG2 = "//form[@id='CreditBureauOtherCICResultPhoto']//input";
+	public static final String INPUT_FILE_S37_IMG = "//form[@id='CreditBureauFileS37']//input";
+	public static final String INPUT_PCB_RESULT_IMG1x_NAME = "//form[@id='CreditBureauOtherPCBResultPhoto']//a";
+	public static final String INPUT_PCB_RESULT_IMG2_NAME = "//form[@id='CreditBureauOtherPCBResultPhoto']//a";
+	public static final String INPUT_CIC_RESULT_IMG1_NAME = "//form[@id='CreditBureauOtherPCBResultPhoto']//a";
+	public static final String INPUT_CIC_RESULT_IMG2_NAME = "//form[@id='CreditBureauOtherPCBResultPhoto']//a";
+	public static final String INPUT_FILE_S37_IMG_NAME = "//form[@id='CreditBureauFileS37']//a";
 	public static final String PCB_RESULT_IMG1 = "//form[@id='CreditBureauOtherPCBResultPhoto']//div[@class='col-sm-12 fileupload-progress fade']";
 	public static final String PCB_RESULT_IMG2 = "//form[@id='CreditBureauPCBResultPhoto']//div[@class='col-sm-12 fileupload-progress fade']";
 	public static final String CIC_RESULT_IMG1 = "//form[@id='CreditBureauCICResultPhoto']//div[@class='col-sm-12 fileupload-progress fade']";
