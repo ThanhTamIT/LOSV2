@@ -21,6 +21,7 @@ public class UpdateInformationR2PageObject extends BasePage {
         switchToFrameIframe(BasePageUI.OPEN_CASES_FRAME);
         waitForElementVisible(UpdateInformationToSalePageUI.INPUT_SL_DECISION_UPLOAD_CONTRACT);
         selectItemInDefaultDropdown(UpdateInformationToSalePageUI.INPUT_SL_DECISION_UPLOAD_CONTRACT, approve);
+        sleepInSecond(3);
         waitForElementInvisible(CreatNewCasePageUI.MODAL_FADE);
         scrollToElement(UpdateInformationToSalePageUI.BTN_COMPLETE);
         waitForAllElementVisible(UpdateInformationToSalePageUI.BTN_COMPLETE);

@@ -1,21 +1,23 @@
-package pageobject.dc;
+package pageobjects.dc;
 
 import commons.BasePage;
 import commons.BasePageUI;
-import pageuis.sale.CreatNewCasePageUI;
 import pageuis.sale.DCPageUI;
-import pageuis.sale.SaleHomePageUI;
-import pageuis.sale.DCPageUI;
+
+import static commons.GlobalConstants.LONG_TIMEOUT;
+import static commons.GlobalConstants.LONG_TIMEOUT_THREE_MINUTE;
 
 public class DCPageObject extends BasePage {
 	public DCPageObject () {
 		}
 	
-	public void checkCICS37 (String itemDrd, String value, String imagePath, String date ) {
+	public void checkCICS37 (String itemDrd, String value, String imageDC, String date ) {
 //		waitForElementVisible(SaleHomePageUI.CASES_FRAME);
 ////        switchToFrameIframe(CreatNewCasePageUI.OPEN_CASES_FRAME);
-		waitForElementVisible(CreatNewCasePageUI.OPEN_CASES_FRAME);
-        switchToFrameIframe(CreatNewCasePageUI.OPEN_CASES_FRAME);
+		waitForElementVisible(BasePageUI.CASES_FRAME);
+		switchToFrameIframe(BasePageUI.CASES_FRAME);
+		switchToFrameIframe(BasePageUI.CASES_SUB_FRAME);
+		switchToFrameIframe(BasePageUI.CASES_OPEN_FRAME);
 //        waitForAllElementVisible(SaleHomePageUI.CASES_SUB_FRAME);
 //        switchToFrameIframe(SaleHomePageUI.CASES_SUB_FRAME);
 		waitForElementVisible(DCPageUI.BTN_CHECK_CIC);
@@ -30,6 +32,8 @@ public class DCPageObject extends BasePage {
 		waitForElementVisible(DCPageUI.EDT_DATE_UPDATE_S37);
 		scrollToElement(DCPageUI.EDT_DATE_UPDATE_S37);
 		sendKeyToElement(DCPageUI.EDT_DATE_UPDATE_S37, date);
+		uploadImage(DCPageUI.INPUT_IMG_DC, imageDC);
+		waitForElementVisible(DCPageUI.INPUT_IMG_DC_NAME);
 ////		waitForElementVisible(DCPageUI.INPUT_IMG_S37);
 ////		scrollToElement(DCPageUI.INPUT_IMG_S37);
 ////		uploadImage(DCPageUI.INPUT_IMG_S37, imagePath);
@@ -37,6 +41,7 @@ public class DCPageObject extends BasePage {
 	
 	public void checkLoanInformation () {
 //		waitForElementVisible(DCPageUI.IMG_S37);
+
 		waitForElementVisible(DCPageUI.RDO_BLACKLIST_NO);
 		scrollToElement(DCPageUI.RDO_BLACKLIST_NO);
 		clickToElement(DCPageUI.RDO_BLACKLIST_NO);
@@ -80,37 +85,39 @@ public class DCPageObject extends BasePage {
 		waitForElementVisible(DCPageUI.EDT_COMMENT_DC);
 		scrollToElement(DCPageUI.EDT_COMMENT_DC);
 		sendKeyToElement(DCPageUI.EDT_COMMENT_DC, dcComment);
-		waitForElementVisible(DCPageUI.BTN_SAVE);
-		scrollToElement(DCPageUI.BTN_SAVE);
-		clickToElement(DCPageUI.BTN_SAVE);
-		
 		}
 	
 	
 	public void clickCompleteButton() {
-		waitForPMModalLoadingInvisible();
-//		waitForElementVisible(DCPageUI.BTN_COMPLETE);
 		scrollToElement(DCPageUI.BTN_COMPLETE);
+		waitForElementVisible(DCPageUI.BTN_COMPLETE);
 		clickToElementByJS(DCPageUI.BTN_COMPLETE);
-		
+
 	}
 	
 	public void clickContinueButton() {
-		waitForPMModalLoadingInvisible();
+//		waitForPMModalLoadingInvisible();
+		waitForElementVisible(DCPageUI.BTN_CONTINUE_DC);
 		clickToElement(DCPageUI.BTN_CONTINUE_DC);
-		
 	}
 	
-	public void testClickData() {
-		waitForElementVisible(SaleHomePageUI.CASES_FRAME);
-        switchToFrameIframe(SaleHomePageUI.CASES_FRAME);
-//		waitForElementVisible(DCPageUI.MENU_ITEM_INBOX);
-////		scrollToElement(DCPageUI.MENU_ITEM_INBOX);
-//		clickToElement(DCPageUI.MENU_ITEM_INBOX);
-		waitForElementVisible(SaleHomePageUI.CASES_SUB_FRAME);
-        switchToFrameIframe(SaleHomePageUI.CASES_SUB_FRAME);
-		waitForElementVisible(DCPageUI.TEST_DATA);
-		scrollToElement(DCPageUI.TEST_DATA);
-		doubleClickToElement(DCPageUI.TEST_DATA);
+	public void testClickData(String appCode) {
+		waitForElementVisible(BasePageUI.CASES_FRAME);
+        switchToFrameIframe(BasePageUI.CASES_FRAME);
+		waitForElementClickable(BasePageUI.TAB_UNASSIGNED);
+		clickToElement(BasePageUI.TAB_UNASSIGNED);
+		waitForElementVisible(BasePageUI.CASES_SUB_FRAME);
+        switchToFrameIframe(BasePageUI.CASES_SUB_FRAME);
+		overrideGlobalTimeout(LONG_TIMEOUT_THREE_MINUTE);
+		doubleClick(DCPageUI.ROW_DATA, appCode);
+		overrideGlobalTimeout(LONG_TIMEOUT);
+		waitForElementVisible(BasePageUI.CASES_OPEN_FRAME);
+		switchToFrameIframe(BasePageUI.CASES_OPEN_FRAME);
+		waitForElementVisible(BasePageUI.BTN_CATCH);
+		clickToElement(BasePageUI.BTN_CATCH);
+
+//		waitForElementVisible(DCPageUI.TEST_DATA);
+//		scrollToElement(DCPageUI.TEST_DATA);
+//		doubleClickToElement(DCPageUI.TEST_DATA);
 	}
 }

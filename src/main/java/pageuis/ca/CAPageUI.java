@@ -1,4 +1,4 @@
-package pageui.ca;
+package pageuis.ca;
 
 public class CAPageUI {
 	
@@ -117,7 +117,7 @@ public class CAPageUI {
 	public static final String DRD_CA_DECISION = "//select[@id='form[caDecision]']";
 	public static final String EDT_CA_COMMENT = "//textarea[@id='form[caComment]']";
 	public static final String BTN_CA_CHECK_CODE_FIELD = "//button[@id='form[btnCheckCodeField]']";
-	public static final String RDO_CA_CHECK_CODE_FIELD = "//span[text()='O - Thẩm định cơ quan']//preceding-sibling::input[@name='form[arrFieldAppraisalCode][]']";
+	public static final String RDO_CA_CHECK_CODE_FIELD = "//span[text()='NO - Miễn thẩm định địa bàn']//preceding-sibling::input[@name='form[arrFieldAppraisalCode][]']";
 			
 
 

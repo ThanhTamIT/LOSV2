@@ -1,8 +1,5 @@
 package shbf.los.ca;
 
-import static commons.GlobalConstants.PROJECT_PATH;
-import static commons.GlobalConstants.URL_MASTER;
-
 import java.lang.reflect.Method;
 
 import org.testng.annotations.BeforeClass;
@@ -11,12 +8,14 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import commons.BaseTest;
-import pageobject.ca.CAPageObject;
-import pageobject.cb.CBPageObject;
-import pageobject.dc.DCPageObject;
+import pageobjects.ca.CAPageObject;
+import pageobjects.cb.CBPageObject;
+import pageobjects.dc.DCPageObject;
 import pageobjects.sale.SaleHomePageObject;
 import pageobjects.sale.SaleLoginPageObject;
 import reportconfig.ExtentTestManager;
+
+import static commons.GlobalConstants.*;
 
 public class CANewCase extends BaseTest {
 	
@@ -48,7 +47,7 @@ public class CANewCase extends BaseTest {
 			browserName = "chrome";
 			account = "calv1";
 			password = "IT123456";
-			saleLoginPage = new SaleLoginPageObject(URL_MASTER);
+			saleLoginPage = new SaleLoginPageObject(URL_LOS_MASTER);
 			dcPageObject = new DCPageObject();
 			cbPageObject = new CBPageObject();
 			caPageObject = new CAPageObject();
@@ -140,9 +139,9 @@ public class CANewCase extends BaseTest {
 			otherLoanAmountMT = "2";
 			CICDrdOption = "Không cần tra CIC";
 			img1CICPath = PROJECT_PATH + "\\uploadFiles\\dcIMG.jpg";
-			img1PCBPath = PROJECT_PATH + "\\uploadFiles\\testIMG.png";
-			img2CICPath = PROJECT_PATH + "\\uploadFiles\\testIMG.png";
-			img2PCBPath = PROJECT_PATH + "\\uploadFiles\\testIMG.png";
+			img1PCBPath = PROJECT_PATH + "\\uploadFiles\\dcIMG.jpg";
+			img2CICPath = PROJECT_PATH + "\\uploadFiles\\dcIMG.jpg";
+			img2PCBPath = PROJECT_PATH + "\\uploadFiles\\dcIMG.jpg";
 			taxCodeResult = "Không có thông tin MST";
 			socialNetworkResult = "Có thông tin";
 			healtInsuranceResult = "Trùng thông tin KH";
@@ -166,10 +165,10 @@ public class CANewCase extends BaseTest {
 		ExtentTestManager.startTest(method.getName(), "CB Create New Case");
 		
 		 ExtentTestManager.getTest().log(Status.INFO, "Step : Login Success");
-	     saleHomePage = saleLoginPage.loginSuccess(account, password);
+	     saleHomePage = saleLoginPage.loginToSystem(account, password);
 	     
 	     ExtentTestManager.getTest().log(Status.INFO, "Step : Login Success");
-	     dcPageObject.testClickData();
+	     dcPageObject.testClickData(APP_CODE);
 	     
 	     ExtentTestManager.getTest().log(Status.INFO, "Step : Check Evaluate Loan Purpose");
 	     caPageObject.evaluateLoanPurpose(bill1, bill2, bill3);
@@ -200,10 +199,10 @@ public class CANewCase extends BaseTest {
          
          ExtentTestManager.getTest().log(Status.INFO, "Step : Click Button Complete");
          cbPageObject.clickButtonComplete();
-         
+
+		System.out.println("CA" + APP_CODE);
 	     ExtentTestManager.getTest().log(Status.INFO, "Step 07: Click Button Continue");
 	     dcPageObject.clickContinueButton();
-	
 	}	
 }
 		
