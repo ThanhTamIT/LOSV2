@@ -53,6 +53,7 @@ public class UpdateInformationToCAPageObject extends BasePage {
         clickToElement(UpdateInformationToCAPageUI.BTN_PASS_RULE_OK);
         scrollToElement(UpdateInformationToCAPageUI.INPUT_AP_DECISION);
         selectItemInDefaultDropdown(UpdateInformationToCAPageUI.INPUT_AP_DECISION, apDecision);
+        waitForElementVisible(BasePageUI.BTN_COMPLETE);
         scrollToElement(BasePageUI.BTN_COMPLETE);
         clickToElement(BasePageUI.BTN_COMPLETE);
     }

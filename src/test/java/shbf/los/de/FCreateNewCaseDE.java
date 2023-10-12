@@ -97,6 +97,8 @@ public class FCreateNewCaseDE extends BaseTest {
         deNewcasePageObject.clickToElement(BasePageUI.BTN_COMPLETE);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step 20: Verify End of process de successfully");
+        deNewcasePageObject.waitForElementInvisible(BasePageUI.BTN_COMPLETE);
+        assertTrue(deNewcasePageObject.isElementUndisplayed(BasePageUI.BTN_COMPLETE));
         deNewcasePageObject.waitForElementVisible(BasePageUI.BTN_CONTINUE);
         deNewcasePageObject.clickToElement(BasePageUI.BTN_CONTINUE);
     }
