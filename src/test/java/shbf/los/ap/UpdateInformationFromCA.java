@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
 import static commons.GlobalConstants.*;
 import static org.testng.Assert.assertTrue;
 
-public class UpdateInformationToCA extends BaseTest {
+public class UpdateInformationFromCA extends BaseTest {
     private String account, password, vhAccommodationTypeText, vhHomeTypeText, livingTimeInYear, livingTimeInMonth,
             videoCallLocateIMG, extraMiningVoucherIMG, apCreditHistory, apDecision;
     private String browserName;
@@ -58,8 +58,7 @@ public class UpdateInformationToCA extends BaseTest {
 //        updateInformationToCAPage.updateDataInfoTest(vhAccommodationTypeText, vhHomeTypeText, livingTimeInYear, livingTimeInMonth,
 //                videoCallLocateIMG, extraMiningVoucherIMG, apCreditHistory, apDecision);
         ExtentTestManager.getTest().log(Status.INFO, "Step 05: Update Information Page");
-        updateInformationToCAPage.updateDataInfo(vhAccommodationTypeText, vhHomeTypeText, livingTimeInYear, livingTimeInMonth,
-                videoCallLocateIMG, extraMiningVoucherIMG, apCreditHistory, apDecision);
+        updateInformationToCAPage.updateDataInfo(apCreditHistory, apDecision);
         ExtentTestManager.getTest().log(Status.INFO, "Step 06: Go To AP Home Page");
         apHomePage = updateInformationToCAPage. clickContinueButton();
     }

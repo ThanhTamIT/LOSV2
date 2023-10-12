@@ -21,30 +21,9 @@ public class UpdateInformationToCAPageObject extends BasePage {
         switchToFrameIframe(BasePageUI.CASES_FRAME);
         switchToFrameIframe(BasePageUI.CASES_SUB_FRAME);
         switchToFrameIframe(BasePageUI.CASES_OPEN_FRAME);
-//        sleepInSecond(5);
-//        waitForAllElementVisible(UpdateInformationToCAPageUI.BTN_OK);
-//        clickToElement(UpdateInformationToCAPageUI.BTN_OK);
     }
 
-    public void updateDataInfo(String vhAccommodationTypeText, String vhHomeTypeText, String livingTimeInYear,
-                               String livingTimeInMonth, String videoCallLocateIMG, String extraMiningVoucherIMG,
-                               String apCreditHistory, String apDecision) {
-//        scrollToElement(UpdateInformationToCAPageUI.CBX_VIDEO_CALL_CODE);
-//        clickToElement(UpdateInformationToCAPageUI.CBX_VIDEO_CALL_CODE);
-//        scrollToElement(UpdateInformationToCAPageUI.INPUT_VH_ACCOMMODATION_TYPE);
-//        selectItemInDefaultDropdown(UpdateInformationToCAPageUI.INPUT_VH_ACCOMMODATION_TYPE, vhAccommodationTypeText);
-//        scrollToElement(UpdateInformationToCAPageUI.INPUT_VH_HOME_TYPE);
-//        selectItemInDefaultDropdown(UpdateInformationToCAPageUI.INPUT_VH_HOME_TYPE, vhHomeTypeText);
-//        scrollToElement(UpdateInformationToCAPageUI.INPUT_VH_LIVING_TIME_IN_YEAR);
-//        sendKeyToElement(UpdateInformationToCAPageUI.INPUT_VH_LIVING_TIME_IN_YEAR, livingTimeInYear);
-//        scrollToElement(UpdateInformationToCAPageUI.INPUT_VH_LIVING_TIME_IN_MONTH);
-//        sendKeyToElement(UpdateInformationToCAPageUI.INPUT_VH_LIVING_TIME_IN_MONTH, livingTimeInMonth);
-//        scrollToElement(UpdateInformationToCAPageUI.VIDEO_CALL_LOCATE_IMG);
-//        uploadImage(UpdateInformationToCAPageUI.VIDEO_CALL_LOCATE_IMG, videoCallLocateIMG);
-//        scrollToElement(UpdateInformationToCAPageUI.EXTRA_MINING_VOUCHER_IMG);
-//        uploadImage(UpdateInformationToCAPageUI.EXTRA_MINING_VOUCHER_IMG, extraMiningVoucherIMG);
-//        waitForElementVisible(UpdateInformationToCAPageUI.VIDEO_CALL_LOCATE_IMG_NAME);
-//        waitForElementVisible(UpdateInformationToCAPageUI.EXTRA_MINING_VOUCHER_IMG_NAME);
+    public void updateDataInfo(String apCreditHistory, String apDecision) {
         scrollToElement(UpdateInformationToCAPageUI.INPUT_AP_CREDIT_HISTORY);
         selectItemInDefaultDropdown(UpdateInformationToCAPageUI.INPUT_AP_CREDIT_HISTORY, apCreditHistory);
         clickToElement(UpdateInformationToCAPageUI.BTN_SUGGEST);
@@ -53,6 +32,7 @@ public class UpdateInformationToCAPageObject extends BasePage {
         clickToElement(UpdateInformationToCAPageUI.BTN_PASS_RULE_OK);
         scrollToElement(UpdateInformationToCAPageUI.INPUT_AP_DECISION);
         selectItemInDefaultDropdown(UpdateInformationToCAPageUI.INPUT_AP_DECISION, apDecision);
+        sleepInSecond(3);
         waitForElementVisible(BasePageUI.BTN_COMPLETE);
         scrollToElement(BasePageUI.BTN_COMPLETE);
         clickToElement(BasePageUI.BTN_COMPLETE);

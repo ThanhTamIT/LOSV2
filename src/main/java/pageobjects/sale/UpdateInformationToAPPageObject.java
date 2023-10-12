@@ -2,7 +2,6 @@ package pageobjects.sale;
 
 import commons.BasePage;
 import commons.BasePageUI;
-import pageobjects.salelead.SaleLeadHomePageObject;
 import pageuis.sale.UpdateInformationToAPPageUI;
 
 public class UpdateInformationToAPPageObject extends BasePage {
@@ -25,6 +24,7 @@ public class UpdateInformationToAPPageObject extends BasePage {
         waitForElementVisible(UpdateInformationToAPPageUI.INPUT_CREDIT_CONTRACT_SIGNED_LATER_NAME);
         waitForElementVisible(UpdateInformationToAPPageUI.INPUT_CUS_AND_STAFF_PHOTO_SIGNED_LATER_NAME);
         scrollToElement(UpdateInformationToAPPageUI.BTN_COMPLETE);
+        waitForElementClickable(UpdateInformationToAPPageUI.BTN_COMPLETE);
         clickToElement(UpdateInformationToAPPageUI.BTN_COMPLETE);
     }
 

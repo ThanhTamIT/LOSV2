@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
 
 import static commons.GlobalConstants.*;
 
-public class UpdateInformationToSale extends BaseTest {
+public class UpdateInformationFromSale extends BaseTest {
     private String account, password, slDecision;
     private String browserName;
     private SaleLeadLoginPageObject saleLeadLoginPage;

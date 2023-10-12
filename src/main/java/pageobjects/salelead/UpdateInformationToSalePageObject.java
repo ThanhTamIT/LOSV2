@@ -18,9 +18,11 @@ public class UpdateInformationToSalePageObject extends BasePage {
         waitForPMModalLoadingInvisible();
         scrollToElement(BasePageUI.INPUT_SELECT_DECISION);
         selectItemInDefaultDropdown(BasePageUI.INPUT_SELECT_DECISION, slDecision);
+        sleepInSecond(3);
         waitForElementInvisible(CreatNewCasePageUI.MODAL_FADE);
-        sleepInSecond(5);
+        sleepInSecond(3);
         scrollToBottomPage();
+        waitForElementClickable(BasePageUI.BTN_COMPLETE);
         clickToElement(BasePageUI.BTN_COMPLETE);
     }
 
