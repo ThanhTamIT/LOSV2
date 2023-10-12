@@ -30,7 +30,7 @@ public class FCreateNewCaseDE extends BaseTest {
     }
 
     @Test
-    public void createNewCaseSuccess(Method method) {
+    public void createNewCaseInDESuccess(Method method) {
         ExtentTestManager.startTest(method.getName(), "Create New Case");
 
         ExtentTestManager.getTest().log(Status.INFO, "Step 01: Login Success");
