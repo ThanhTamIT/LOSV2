@@ -375,6 +375,7 @@ public class CAPageObject extends BasePage {
         waitForPMModalLoadingInvisible();
         waitForElementVisible(CBPageUI.BTN_OK);
         clickToElementByJS(CBPageUI.BTN_OK);
+        waitForElementVisible(CAPageUI.DRD_CA_DECISION);
         selectDropdownByText(CAPageUI.DRD_CA_DECISION, caDescision);
         clickToElement(CAPageUI.BTN_CA_CHECK_CODE_FIELD);
         sleepInSecond(3);
