@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
 import static commons.GlobalConstants.*;
 import static org.testng.Assert.assertTrue;
 
-public class UpdateInformationToAP extends BaseTest {
+public class UpdateInformationFromAP extends BaseTest {
     private String account, password, appCode, approve, creditContractSignedLater, identityCardSignedLater, customerAndStaffPhotoSignedLater;
     private String browserName;
     private SaleLoginPageObject saleLoginPage;
