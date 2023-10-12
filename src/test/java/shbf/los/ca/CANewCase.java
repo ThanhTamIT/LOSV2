@@ -161,7 +161,7 @@ public class CANewCase extends BaseTest {
 	 }
 			
 	@Test
-	public void CANewCase (Method method) {
+	public void createNewCaseCA (Method method) {
 		ExtentTestManager.startTest(method.getName(), "CB Create New Case");
 		
 		 ExtentTestManager.getTest().log(Status.INFO, "Step : Login Success");

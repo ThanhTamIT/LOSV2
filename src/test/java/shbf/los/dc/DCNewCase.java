@@ -39,7 +39,7 @@ public class DCNewCase extends BaseTest {
     }
 
     @Test
-    public void fillThongTinDC(java.lang.reflect.Method method) {
+    public void fillInformaitonDC(java.lang.reflect.Method method) {
         ExtentTestManager.startTest(method.getName(), "DC Create New Case");
 
         ExtentTestManager.getTest().log(Status.INFO, "Step : Login Success");
