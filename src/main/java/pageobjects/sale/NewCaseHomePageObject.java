@@ -27,6 +27,7 @@ public class NewCaseHomePageObject extends BasePage {
         waitForElementVisible(CreatNewCasePageUI.FRONT_IMG);
         waitForElementVisible(CreatNewCasePageUI.BACK_IMG);
         waitForElementVisible(CreatNewCasePageUI.FULL_FACE_IMG);
+        waitForElementClickable(CreatNewCasePageUI.COMPLETE_BTN_IN_CUSTOMER_ID);
         scrollToElement(CreatNewCasePageUI.COMPLETE_BTN_IN_CUSTOMER_ID);
         clickToElement(CreatNewCasePageUI.COMPLETE_BTN_IN_CUSTOMER_ID);
     }
@@ -96,8 +97,10 @@ public class NewCaseHomePageObject extends BasePage {
         waitForPMModalLoadingInvisible();
         scrollToElement(CreatNewCasePageUI.SALE_DECISION_INPUT);
         selectItemInDefaultDropdown(CreatNewCasePageUI.SALE_DECISION_INPUT, saleDecision);
+        sleepInSecond(3);
         waitForElementInvisible(CreatNewCasePageUI.MODAL_FADE);
         scrollToBottomPage();
+        waitForElementClickable(BasePageUI.BTN_COMPLETE);
         clickToElement(BasePageUI.BTN_COMPLETE);
     }
 
@@ -113,6 +116,7 @@ public class NewCaseHomePageObject extends BasePage {
         waitForElementVisible(CreatNewCasePageUI.CUSTOMER_AND_STAFF_PHOTO);
         waitForElementVisible(CreatNewCasePageUI.CUSTOMER_PHOTO_INSIDE_HOUSE);
         waitForElementVisible(CreatNewCasePageUI.CUSTOMER_PHOTO_FRONT_HOUSE);
+        waitForElementClickable(CreatNewCasePageUI.SUBMIT_BTN);
         scrollToElement(CreatNewCasePageUI.SUBMIT_BTN);
         clickToElement(CreatNewCasePageUI.SUBMIT_BTN);
     }

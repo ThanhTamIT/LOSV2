@@ -10,13 +10,13 @@
   <parameter name="browser" value="chrome" />
     <classes>
       <class name="shbf.los.sale.CreateNewCase"/>
-      <class name="shbf.los.salelead.UpdateInformationToSale"/>
+      <class name="shbf.los.salelead.UpdateInformationFromSale"/>
       <class name="shbf.los.de.FCreateNewCaseDE"/>
       <class name="shbf.los.dc.DCNewCase"/>
       <class name="shbf.los.cb.CBNewCase"/>
       <class name="shbf.los.ca.CANewCase"/>
-      <class name="shbf.los.ap.UpdateInformationToCA"/>
-      <class name="shbf.los.sale.UpdateInformationToAP"/>
+      <class name="shbf.los.ap.UpdateInformationFromCA"/>
+      <class name="shbf.los.sale.UpdateInformationFromAP"/>
       <class name="shbf.los.salelead.UpdateInformationR2"/>
     </classes>
   </test> 

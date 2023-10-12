@@ -3,7 +3,6 @@ package pageobjects.sale;
 import commons.BasePage;
 import commons.BasePageUI;
 import pageuis.sale.SaleHomePageUI;
-import pageuis.salelead.SaleLeadHomePageUI;
 
 public class SaleHomePageObject extends BasePage {
 

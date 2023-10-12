@@ -12,7 +12,7 @@
 <!--       <class name="shbf.los.sale.SaleLogin"/>-->
    <!--<class name="shbf.los.sale.CreateNewCase"/> -->   
 <!--      <class name="shbf.los.salelead.SaleLeadLogin"/>-->
-    <!-- <class name="shbf.los.salelead.UpdateInformationToSale"/>-->  
+    <!-- <class name="shbf.los.salelead.UpdateInformationFromSale"/>-->
         <class name="shbf.los.de.FCreateNewCaseDE"/>  
     </classes>
   </test> 
