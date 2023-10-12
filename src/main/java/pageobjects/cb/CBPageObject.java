@@ -22,7 +22,9 @@ public class CBPageObject extends BasePage {
         scrollToElement(CBPageUI.BTN_CHECK_PCB);
         clickToElement(CBPageUI.BTN_CHECK_PCB);
         sleepInSecond(5);
+        waitForPMModalLoadingVisible();
         waitForPMModalLoadingInvisible();
+        sleepInSecond(5);
         waitForElementVisible(CBPageUI.RDO_PCB_YES);
         scrollToElement(CBPageUI.RDO_PCB_YES);
         clickToElementByJS(CBPageUI.RDO_PCB_YES);

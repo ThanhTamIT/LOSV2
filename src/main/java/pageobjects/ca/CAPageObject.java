@@ -182,8 +182,9 @@ public class CAPageObject extends BasePage {
         scrollToElement(CBPageUI.RDO_PCB_YES);
         clickToElementByJS(CBPageUI.RDO_PCB_YES);
         sleepInSecond(5);
-
+        waitForPMModalLoadingVisible();
         waitForPMModalLoadingInvisible();
+        sleepInSecond(5);
         scrollToElement(CBPageUI.EDT_CONTRACT_PENDING);
         waitForElementVisible(CBPageUI.EDT_CONTRACT_PENDING);
         sendkeyToElementByJS(CBPageUI.EDT_CONTRACT_PENDING, numberContractPending);
@@ -377,6 +378,7 @@ public class CAPageObject extends BasePage {
         clickToElementByJS(CBPageUI.BTN_OK);
         waitForElementVisible(CAPageUI.DRD_CA_DECISION);
         selectDropdownByText(CAPageUI.DRD_CA_DECISION, caDescision);
+        waitForElementVisible(CAPageUI.BTN_CA_CHECK_CODE_FIELD);
         clickToElement(CAPageUI.BTN_CA_CHECK_CODE_FIELD);
         sleepInSecond(3);
         waitForPMModalLoadingInvisible();

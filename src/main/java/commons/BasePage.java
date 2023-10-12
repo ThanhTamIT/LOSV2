@@ -144,6 +144,11 @@ public class BasePage {
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(PM_MODAL_LOADING)));
 	}
 
+	public void waitForPMModalLoadingVisible() {
+		WebDriverWait explicitWait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(longTimeout));
+		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PM_MODAL_LOADING)));
+	}
+
 	public void selectItemInDefaultDropdown(String locator, String textItem) {
 		Select select = new Select(this.getWebElement(locator));
 		select.selectByVisibleText(textItem);
