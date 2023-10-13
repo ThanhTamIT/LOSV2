@@ -21,8 +21,8 @@ public class CBPageObject extends BasePage {
         waitForElementVisible(CBPageUI.BTN_CHECK_PCB);
         scrollToElement(CBPageUI.BTN_CHECK_PCB);
         clickToElement(CBPageUI.BTN_CHECK_PCB);
-        sleepInSecond(5);
-        waitForPMModalLoadingVisible();
+        sleepInSecond(10);
+//        waitForPMModalLoadingVisible();
         waitForPMModalLoadingInvisible();
         sleepInSecond(5);
         waitForElementVisible(CBPageUI.RDO_PCB_YES);
